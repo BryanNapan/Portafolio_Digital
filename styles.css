@@ -164,9 +164,15 @@ ul {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1fr;
   align-items: center;
   gap: 2rem;
+}
+
+.hero-grid > div {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .eyebrow {
@@ -180,14 +186,16 @@ ul {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 700;
-
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5 {
   line-height: 1.15;
   margin-top: 1rem;
+  text-align: center;
 }
 
 h1 {
@@ -206,6 +214,7 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  justify-content: center;
   margin-top: 2rem;
 }
 
@@ -268,10 +277,19 @@ p {
 
 .section-head {
   margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.page-hero .eyebrow,
+.section-head .eyebrow {
+  display: table;
+  margin: 0 auto;
 }
 
 .section-head p {
   max-width: 680px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .grid-3,
@@ -306,6 +324,10 @@ p {
   color: var(--muted);
 }
 
+.activity-title {
+  margin-top: 1rem;
+}
+
 .member-profile {
   display: grid;
   grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1.25fr);
@@ -323,12 +345,6 @@ p {
   place-items: center;
   overflow: hidden;
   box-shadow: var(--shadow);
-}
-img{
-  border-radius: 20px;
-  object-fit: cover;
-  
-
 }
 
 .member-description p {
@@ -356,6 +372,36 @@ img{
   border: 0;
 }
 
+.related-resources,
+.website-section {
+  text-align: center;
+}
+
+.media-resource {
+  justify-content: center;
+}
+
+.media-resource-content {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+.media-resource-content h3 {
+  margin-top: 0;
+  color: #f8fbff;
+}
+
+.media-image {
+  display: block;
+  width: min(100%, 650px);
+  height: clamp(220px, 32vw, 360px);
+  object-fit: contain;
+  border-radius: 12px;
+}
+
 .icon {
   width: 52px;
   height: 52px;
@@ -369,8 +415,8 @@ img{
 
 .resource-list {
   display: grid;
-  gap: 1rem;
-  margin-top: 1.5rem;
+  gap: 0.75rem;
+  margin-top: 1rem;
 }
 
 .resource-item {
@@ -378,7 +424,7 @@ img{
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1rem 1.1rem;
+  padding: 0.9rem 1rem;
   background: rgba(255, 255, 255, 0.04);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -523,7 +569,6 @@ ul.check-list li::before {
     display: block;
   }
 
-  .hero-grid,
   .grid-3,
   .grid-4,
   .video-grid,
@@ -534,5 +579,14 @@ ul.check-list li::before {
   .pdf-viewer {
     height: 75vh;
     min-height: 500px;
+  }
+
+  .resource-item {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .resource-item .btn {
+    align-self: flex-start;
   }
 }
